@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Classonn+</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+
+    <!-- 🔥 NAVBAR (SAME FOR ALL PAGES) -->
+    <nav id="navbar" class="fixed w-full z-50 bg-white shadow-md">
+        <div class="container mx-auto flex justify-between items-center px-4 py-3">
+
+            <a href="index.html">
+                <img src="images/logo.png" class="h-14 md:h-16">
+            </a>
+
+            <ul class="hidden md:flex gap-6 text-black font-medium">
+                <li><a href="index.html" class="hover:text-yellow-500">Home</a></li>
+                <li><a href="products.html" class="hover:text-yellow-500">Products</a></li>
+                <li><a href="about.html" class="hover:text-yellow-500">About</a></li>
+                <li><a href="contact.html" class="text-yellow-500 font-semibold">Contact</a></li>
+            </ul>
+
+            <button id="menu-btn" class="md:hidden text-2xl">☰</button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-white px-6 pb-4 shadow-md md:hidden">
+            <a href="index.html" class="block py-3 border-b">Home</a>
+            <a href="products.html" class="block py-3 border-b">Products</a>
+            <a href="about.html" class="block py-3 border-b">About</a>
+            <a href="contact.html" class="block py-3">Contact</a>
+        </div>
+    </nav>
+
+    <!-- 🔥 HERO -->
+    <section class="pt-28 pb-12 bg-black text-white text-center">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold">
+            Get in <span class="text-yellow-400">Touch</span>
+        </h1>
+        <p class="text-gray-300 mt-2 px-4">
+            Have questions or want custom notebooks? Contact us anytime.
+        </p>
+    </section>
+
+    <!-- 🔥 CONTACT CARDS -->
+    <section class="py-12 px-4">
+        <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="bg-white p-6 rounded-xl shadow text-center">
+                <h3 class="text-yellow-500 font-semibold mb-2">Company</h3>
+                <p class="font-medium">Classonn Plus Group of Industry</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow text-center">
+                <h3 class="text-yellow-500 font-semibold mb-2">Email</h3>
+                <a href="mailto:classonnplus@gmail.com">classonnplus@gmail.com</a>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow text-center">
+                <h3 class="text-yellow-500 font-semibold mb-2">Phone</h3>
+                <a href="tel:9130841801">+91 9130841801</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔥 ADDRESS -->
+    <section class="px-4 pb-12">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <div class="bg-gray-100 p-6 rounded-xl shadow text-center">
+                <h3 class="text-yellow-500 font-semibold mb-2">Head Office</h3>
+                <p>Kabnur - Ichalkaranji,<br>Kolhapur, Maharashtra</p>
+            </div>
+
+            <div class="bg-gray-100 p-6 rounded-xl shadow text-center">
+                <h3 class="text-yellow-500 font-semibold mb-2">Branch</h3>
+                <p>Takwade, Shirol,<br>Kolhapur - 416121</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 🔥 ACTION BUTTONS -->
+    <section class="text-center pb-12 px-4">
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+
+            <a href="tel:9130841801"
+                class="bg-black text-white px-6 py-3 rounded-full hover:bg-yellow-400 hover:text-black transition">
+                Call Now
+            </a>
+
+            <a href="mailto:classonnplus@gmail.com"
+                class="border px-6 py-3 rounded-full hover:bg-black hover:text-white transition">
+                Email Us
+            </a>
+
+            <a href="https://wa.me/919767197177" target="_blank"
+                class="bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-600 transition">
+                WhatsApp
+            </a>
+
+        </div>
+    </section>
+
+    <!-- 🔥 MAP -->
+    <section class="px-4 pb-12">
+        <iframe src="https://maps.google.com/maps?q=Ichalkaranji%20Kolhapur&t=&z=13&output=embed"
+            class="w-full h-72 md:h-96 rounded-xl shadow">
+        </iframe>
+    </section>
+
+    <!-- 🔥 FOOTER -->
+    <footer class="bg-black text-white text-center py-6">
+        © 2026 Classonn+
+    </footer>
+
+    <script>
+        document.getElementById("menu-btn").onclick = function () {
+            document.getElementById("mobile-menu").classList.toggle("hidden");
+        };
+    </script>
+
+</body>
+
+</html>
