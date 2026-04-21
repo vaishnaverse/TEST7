@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | Classonn+</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+
+    <!-- 🔥 NAVBAR -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 py-3">
+            <a href="index.html">
+                <img src="images/logo.png" class="h-14 md:h-16">
+            </a>
+
+            <ul class="hidden md:flex gap-6 text-black font-medium">
+                <li><a href="index.html" class="hover:text-yellow-500">Home</a></li>
+                <li><a href="products.html" class="hover:text-yellow-500">Products</a></li>
+                <li><a href="about.html" class="hover:text-yellow-500">About</a></li>
+                <li><a href="contact.html" class="hover:text-yellow-500">Contact</a></li>
+            </ul>
+
+            <button id="menu-btn" class="md:hidden text-2xl">☰</button>
+        </div>
+
+        <div id="mobile-menu" class="hidden bg-white px-6 pb-4 shadow-md md:hidden">
+            <a href="index.html" class="block py-3 border-b">Home</a>
+            <a href="products.html" class="block py-3 border-b">Products</a>
+            <a href="about.html" class="block py-3 border-b">About</a>
+            <a href="contact.html" class="block py-3">Contact</a>
+        </div>
+    </nav>
+
+    <!-- 🔥 PRODUCT SECTION -->
+    <section class="pt-28 pb-16 px-4">
+        <div class="container mx-auto grid md:grid-cols-2 gap-10 items-center">
+
+            <!-- ✅ FIXED IMAGE SECTION -->
+            <div class="flex justify-center items-center bg-gray-50 p-6 rounded-xl shadow">
+
+                <img id="product-img"
+                    class="max-h-[300px] sm:max-h-[350px] md:max-h-[400px] w-auto object-contain transition duration-300 hover:scale-105">
+
+            </div>
+
+            <!-- DETAILS -->
+            <div>
+
+                <h1 id="product-name" class="text-3xl md:text-4xl font-bold mb-4"></h1>
+
+                <p id="product-price" class="text-xl text-yellow-500 font-semibold mb-4"></p>
+
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Premium quality notebook designed for smooth writing experience, durability, and everyday use.
+                </p>
+
+                <!-- Specifications -->
+                <div class="mb-6">
+                    <h3 class="font-semibold text-lg mb-2">Specifications</h3>
+
+                    <ul class="text-gray-600 space-y-1">
+                        <li><strong>Pages:</strong> 100–200</li>
+                        <li><strong>Paper Quality:</strong> High GSM smooth paper</li>
+                        <li><strong>Binding:</strong> Strong binding</li>
+                        <li><strong>Type:</strong> <span id="product-type"></span></li>
+                    </ul>
+                </div>
+
+                <!-- WhatsApp Button -->
+                <a id="whatsapp-btn" target="_blank"
+                    class="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition inline-block shadow">
+                    Buy / Contact on WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 🔥 FOOTER -->
+    <footer class="bg-black text-white text-center py-6">
+        © 2026 Classonn+
+    </footer>
+
+    <!-- 🔥 SCRIPT -->
+    <script>
+        function getParams() {
+            let params = new URLSearchParams(window.location.search);
+            return {
+                name: params.get("name"),
+                price: params.get("price"),
+                img: params.get("img"),
+                type: params.get("type")
+            };
+        }
+
+        let product = getParams();
+
+        // Set Data
+        document.getElementById("product-name").innerText = product.name;
+        document.getElementById("product-price").innerText = product.price;
+        document.getElementById("product-img").src = product.img;
+        document.getElementById("product-type").innerText = product.type;
+
+        // WhatsApp Link
+        let message = `Hello Classonn Plus, I want to buy ${product.name}`;
+        let whatsappURL = `https://wa.me/919767197177?text=${encodeURIComponent(message)}`;
+
+        document.getElementById("whatsapp-btn").href = whatsappURL;
+
+        // Mobile Menu
+        document.getElementById("menu-btn").onclick = function () {
+            document.getElementById("mobile-menu").classList.toggle("hidden");
+        };
+    </script>
+
+</body>
+
+</html>
